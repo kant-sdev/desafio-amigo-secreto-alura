@@ -25,7 +25,7 @@ Um aplicativo web simples para organizar sorteios de Amigo Secreto.
 ## Como Usar
 1. Clone o repositório:
   ```
-   git clone <URL_DO_REPOSITORIO>
+   git clone https://github.com/kant-sdev/desafio-amigo-secreto-alura.git
   ```
 
 - Abra index.html em um navegador.
