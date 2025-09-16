@@ -1,0 +1,250 @@
+:root {
+  /* Paleta baseada no layout moderno */
+  --background: #f8fafc;
+  --foreground: #334155;
+
+  --card: #ffffff;
+  --card-foreground: #334155;
+
+  --primary: #6366f1;
+  --primary-foreground: #ffffff;
+
+  --secondary: #e2e8f0;
+  --secondary-foreground: #334155;
+
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+
+  --accent: #6366f1;
+  --accent-foreground: #ffffff;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+
+  --border: #e2e8f0;
+  --input: #ffffff;
+  --ring: #6366f1;
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+}
+
+.dark {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+
+  --card: #1e293b;
+  --card-foreground: #f8fafc;
+
+  --primary: #818cf8;
+  --primary-foreground: #0f172a;
+
+  --secondary: #334155;
+  --secondary-foreground: #f8fafc;
+
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+
+  --accent: #818cf8;
+  --accent-foreground: #0f172a;
+
+  --destructive: #f87171;
+  --destructive-foreground: #0f172a;
+
+  --border: #334155;
+  --input: #1e293b;
+  --ring: #818cf8;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container principal */
+.main-content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Header */
+.header-banner {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.header-banner img {
+  margin-top: 1rem;
+  max-width: 150px;
+  height: auto;
+}
+
+.main-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin-bottom: 1.5rem;
+}
+
+/* Input Wrapper */
+.input-wrapper {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.input-name {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--input);
+  color: var(--foreground);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.input-name::placeholder {
+  color: var(--muted-foreground);
+}
+
+.input-name:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.15);
+}
+
+/* Buttons */
+.button-add,
+.button-draw {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.button-add {
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+
+.button-add:hover {
+  background: #4f46e5;
+  transform: translateY(-1px);
+}
+
+.button-draw {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.button-draw:hover {
+  background: #4338ca;
+  transform: translateY(-1px);
+}
+
+/* Button container */
+.button-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Lists */
+.name-list,
+.result-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.name-list li,
+.result-list li {
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s ease;
+}
+
+.name-list li:hover,
+.result-list li:hover {
+  background: var(--muted);
+}
+
+/* Result display */
+.result-list {
+  margin-top: 1rem;
+  color: var(--accent);
+  font-weight: 600;
+  text-align: center;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  background: rgba(99, 102, 241, 0.1);
+}
+
+/* Histórico */
+#historico li {
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+#historico li .history-date {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  margin-bottom: 0.5rem;
+}
+
+#historico li .history-result {
+  font-weight: 500;
+}
+
+/* Responsividade */
+@media (max-width: 640px) {
+  .main-content {
+    padding: 1rem;
+  }
+
+  .main-title {
+    font-size: 2rem;
+  }
+
+  .input-wrapper,
+  .button-container {
+    flex-direction: column;
+  }
+
+  .button-container .button-draw {
+    width: 100%;
+  }
+}
